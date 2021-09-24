@@ -22,7 +22,7 @@ HTML(anim.to_html5_video())
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mRuntimeError[0m                              Traceback (most recent call last)
-[0;32m/tmp/ipykernel_2146/4267696184.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/tmp/ipykernel_1884/4267696184.py[0m in [0;36m<module>[0;34m[0m
 [0;32m----> 1[0;31m [0mHTML[0m[0;34m([0m[0manim[0m[0;34m.[0m[0mto_html5_video[0m[0;34m([0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m
 [0;32m/opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/site-packages/matplotlib/animation.py[0m in [0;36mto_html5_video[0;34m(self, embed_limit)[0m

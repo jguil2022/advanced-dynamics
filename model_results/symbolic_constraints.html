@@ -187,17 +187,17 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../module_02/01_variational.html">
-     Lecture_06 variational calculus
+     Lecture_01 variational calculus
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../module_02/02_virtual-work.html">
-     Lecture_08 - virtual work
+     Lecture_02 - virtual work
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../module_02/03_catenary.html">
-     Lecture_09-hanging chain
+     Lecture_03-hanging chain
     </a>
    </li>
   </ul>
@@ -214,27 +214,27 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../module_03/01_rotate-pendulum.html">
-     Lecture_10 - pendulum in a rotating frame
+     Lecture_01 - pendulum in a rotating frame
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../module_03/02_conservative.html">
-     Lecture_12 - conservative systems
+     Lecture_02 - conservative systems
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../module_03/03_nonconservative.html">
-     Lecture_13 - nonconservative systems
+     Lecture_03 - nonconservative systems
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../module_03/04_lagrangian.html">
-     Lecture_15 - conservative Lagrangian system
+     Lecture_04 - conservative Lagrangian system
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../module_03/05_top.html">
-     Lecture_17 - spinning top equation of motion
+     Lecture_05 - spinning top equation of motion
     </a>
    </li>
   </ul>
@@ -251,32 +251,32 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../module_04/01_pin.html">
-     Lecture_20 - Computational Pin Constraint
+     Lecture_01 - Computational Pin Constraint
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../module_04/02_slider-crank.html">
-     Lecture_23 - Kinematic analysis of slider crank
+     Lecture_02 - Kinematic analysis of slider crank
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../module_04/03_embedding.html">
-     Lecture 25 - Embedding technique for computational methods
+     Lecture 03 - Embedding technique for computational methods
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../module_04/04_symbolic.html">
-     Creating constraints with SymPy
+     Building Constraints in SymPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../module_04/05_lagrange.html">
-     Lecture 27 - Lagrange Multipliers
+     Lecture 05 - Lagrange Multipliers
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../module_04/06_augment.html">
-     Lecture 28 - Augmented technique
+     Lecture 06 - Augmented technique
     </a>
    </li>
   </ul>
@@ -456,11 +456,14 @@
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/model_results/symbolic_constraints.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+        <a class="dropdown-buttons"
+            href="../_sources/model_results/symbolic_constraints.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/model_results/symbolic_constraints.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -567,7 +570,7 @@
                 
   <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
 </div>
@@ -594,7 +597,7 @@
 <p>as SymPy variables.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sympy</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;q1, q2, q3, q4, q5, q6&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sympy</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;q1, q2, q3, q4, q5, q6&#39;</span><span class="p">)</span>
 <span class="n">sympy</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;dq1, dq2, dq3, dq4, dq5, dq6&#39;</span><span class="p">)</span>
 <span class="n">sympy</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;t, L2&#39;</span><span class="p">)</span>
 <span class="n">q</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="n">q1</span><span class="p">,</span> <span class="n">q2</span><span class="p">,</span> <span class="n">q3</span><span class="p">,</span> <span class="n">q4</span><span class="p">,</span> <span class="n">q5</span><span class="p">,</span> <span class="n">q6</span><span class="p">])</span>
@@ -605,25 +608,17 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">q</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\begin{split}\displaystyle \left[\begin{matrix}q_{1}\\q_{2}\\q_{3}\\q_{4}\\q_{5}\\q_{6}\end{matrix}\right]\end{split}\]</div>
 </div>
 </div>
 <p><span class="math notranslate nohighlight">\(\mathbf{q} = \left[\begin{matrix}q_{1}\\q_{2}\\q_{3}\\q_{4}\\q_{5}\\q_{6}\end{matrix}\right]\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dq</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dq</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\begin{split}\displaystyle \left[\begin{matrix}dq_{1}\\dq_{2}\\dq_{3}\\dq_{4}\\dq_{5}\\dq_{6}\end{matrix}\right]\end{split}\]</div>
 </div>
 </div>
 </div>
@@ -633,7 +628,7 @@
 <p>In this example, you have two rigid bodies. Body one <span class="math notranslate nohighlight">\([q_1,~q_2,~q_3]\)</span> slides on the x-axis. Body 1 and body 2, <span class="math notranslate nohighlight">\([q_4,~q_5,~q_6]\)</span> are connected by a pin in the center of body 1, <span class="math notranslate nohighlight">\(\mathbf{R}_{pin} = q_1\hat{i}+q_2\hat{j}\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">C</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="n">q1</span>  <span class="o">-</span> <span class="n">q4</span> <span class="o">+</span> <span class="n">L2</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">sympy</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">q6</span><span class="p">),</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="n">q1</span>  <span class="o">-</span> <span class="n">q4</span> <span class="o">+</span> <span class="n">L2</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">sympy</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">q6</span><span class="p">),</span>
                  <span class="n">q2</span> <span class="o">-</span> <span class="n">q5</span> <span class="o">+</span> <span class="n">L2</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">sympy</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">q6</span><span class="p">),</span>
                  <span class="n">q2</span><span class="p">,</span>
                  <span class="n">q3</span><span class="p">])</span>
@@ -641,43 +636,28 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\begin{split}\displaystyle \left[\begin{matrix}\frac{L_{2} \cos{\left(q_{6} \right)}}{2} + q_{1} - q_{4}\\\frac{L_{2} \sin{\left(q_{6} \right)}}{2} + q_{2} - q_{5}\\q_{2}\\q_{3}\end{matrix}\right]\end{split}\]</div>
-</div>
 </div>
 <p>Next, take the Jacobian, <span class="math notranslate nohighlight">\(\mathbf{C_q}\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Cq</span> <span class="o">=</span> <span class="n">C</span><span class="o">.</span><span class="n">jacobian</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Cq</span> <span class="o">=</span> <span class="n">C</span><span class="o">.</span><span class="n">jacobian</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Cq dimensions:&#39;</span><span class="p">,</span> <span class="n">Cq</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="n">Cq</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cq dimensions: (4, 6)
-</pre></div>
-</div>
-<div class="output text_latex math notranslate nohighlight">
-\[\begin{split}\displaystyle \left[\begin{matrix}1 &amp; 0 &amp; 0 &amp; -1 &amp; 0 &amp; - \frac{L_{2} \sin{\left(q_{6} \right)}}{2}\\0 &amp; 1 &amp; 0 &amp; 0 &amp; -1 &amp; \frac{L_{2} \cos{\left(q_{6} \right)}}{2}\\0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0\end{matrix}\right]\end{split}\]</div>
 </div>
 </div>
 <p>Now, you can calculate</p>
 <p><span class="math notranslate nohighlight">\(\mathbf{Q_d} = -(\mathbf{C_q \dot{q}})_\mathbf{q}\mathbf{\dot{q}} - 2\mathbf{C}_{\mathbf{q}t}\dot{\mathbf{q}}- \mathbf{C}_{tt}\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Qd</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">C</span><span class="o">.</span><span class="n">jacobian</span><span class="p">(</span><span class="n">q</span><span class="p">)</span><span class="nd">@dq</span><span class="p">)</span><span class="o">.</span><span class="n">jacobian</span><span class="p">(</span><span class="n">q</span><span class="p">)</span><span class="nd">@dq</span>\
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Qd</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">C</span><span class="o">.</span><span class="n">jacobian</span><span class="p">(</span><span class="n">q</span><span class="p">)</span><span class="nd">@dq</span><span class="p">)</span><span class="o">.</span><span class="n">jacobian</span><span class="p">(</span><span class="n">q</span><span class="p">)</span><span class="nd">@dq</span>\
     <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">sympy</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">Cq</span><span class="p">,</span><span class="n">t</span><span class="p">)</span><span class="nd">@dq</span>\
     <span class="o">-</span> <span class="n">sympy</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 
 <span class="n">Qd</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\begin{split}\displaystyle \left[\begin{matrix}\frac{L_{2} dq_{6}^{2} \cos{\left(q_{6} \right)}}{2}\\\frac{L_{2} dq_{6}^{2} \sin{\left(q_{6} \right)}}{2}\\0\\0\end{matrix}\right]\end{split}\]</div>
 </div>
 </div>
 </div>
@@ -690,44 +670,28 @@
 <p>where the <code class="docutils literal notranslate"><span class="pre">inputs</span></code> are <span class="math notranslate nohighlight">\(\mathbf{q}\)</span>, <span class="math notranslate nohighlight">\(\dot{\mathbf{q}}\)</span>, and other parameters like time or dimensions, <span class="math notranslate nohighlight">\(L^2\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Cq_sys</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">lambdify</span><span class="p">((</span><span class="n">q</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">L2</span><span class="p">),</span> <span class="n">Cq</span><span class="p">,</span> <span class="s1">&#39;numpy&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Cq_sys</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">lambdify</span><span class="p">((</span><span class="n">q</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">L2</span><span class="p">),</span> <span class="n">Cq</span><span class="p">,</span> <span class="s1">&#39;numpy&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Cq_sys</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">6</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">L2</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 1. ,  0. ,  0. , -1. ,  0. , -0. ],
-       [ 0. ,  1. ,  0. ,  0. , -1. ,  0.5],
-       [ 0. ,  1. ,  0. ,  0. ,  0. ,  0. ],
-       [ 0. ,  0. ,  1. ,  0. ,  0. ,  0. ]])
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Cq_sys</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">6</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">L2</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Q</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">lambdify</span><span class="p">((</span><span class="n">q</span><span class="p">,</span> <span class="n">dq</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">L2</span><span class="p">),</span> <span class="n">Qd</span><span class="p">,</span> <span class="s2">&quot;numpy&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Q</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">lambdify</span><span class="p">((</span><span class="n">q</span><span class="p">,</span> <span class="n">dq</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">L2</span><span class="p">),</span> <span class="n">Qd</span><span class="p">,</span> <span class="s2">&quot;numpy&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Q</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">6</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">6</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">L2</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.27015115],
-       [0.42073549],
-       [0.        ],
-       [0.        ]])
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Q</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">6</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">6</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">L2</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Creating constraints with SymPy &#8212; Advanced Dynamics</title>
+    <title>Building Constraints in SymPy &#8212; Advanced Dynamics</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -42,6 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -51,8 +53,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Lecture 27 - Lagrange Multipliers" href="05_lagrange.html" />
-    <link rel="prev" title="Lecture 25 - Embedding technique for computational methods" href="03_embedding.html" />
+    <link rel="next" title="Lecture 05 - Lagrange Multipliers" href="05_lagrange.html" />
+    <link rel="prev" title="Lecture 03 - Embedding technique for computational methods" href="03_embedding.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -185,17 +187,17 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../module_02/01_variational.html">
-     Lecture_06 variational calculus
+     Lecture_01 variational calculus
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../module_02/02_virtual-work.html">
-     Lecture_08 - virtual work
+     Lecture_02 - virtual work
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../module_02/03_catenary.html">
-     Lecture_09-hanging chain
+     Lecture_03-hanging chain
     </a>
    </li>
   </ul>
@@ -212,27 +214,27 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../module_03/01_rotate-pendulum.html">
-     Lecture_10 - pendulum in a rotating frame
+     Lecture_01 - pendulum in a rotating frame
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../module_03/02_conservative.html">
-     Lecture_12 - conservative systems
+     Lecture_02 - conservative systems
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../module_03/03_nonconservative.html">
-     Lecture_13 - nonconservative systems
+     Lecture_03 - nonconservative systems
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../module_03/04_lagrangian.html">
-     Lecture_15 - conservative Lagrangian system
+     Lecture_04 - conservative Lagrangian system
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../module_03/05_top.html">
-     Lecture_17 - spinning top equation of motion
+     Lecture_05 - spinning top equation of motion
     </a>
    </li>
   </ul>
@@ -249,32 +251,32 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="01_pin.html">
-     Lecture_20 - Computational Pin Constraint
+     Lecture_01 - Computational Pin Constraint
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02_slider-crank.html">
-     Lecture_23 - Kinematic analysis of slider crank
+     Lecture_02 - Kinematic analysis of slider crank
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="03_embedding.html">
-     Lecture 25 - Embedding technique for computational methods
+     Lecture 03 - Embedding technique for computational methods
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Creating constraints with SymPy
+     Building Constraints in SymPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="05_lagrange.html">
-     Lecture 27 - Lagrange Multipliers
+     Lecture 05 - Lagrange Multipliers
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="06_augment.html">
-     Lecture 28 - Augmented technique
+     Lecture 06 - Augmented technique
     </a>
    </li>
   </ul>
@@ -454,7 +456,10 @@
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        
+        <a class="dropdown-buttons"
+            href="../_sources/module_04/04_symbolic.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../_sources/module_04/04_symbolic.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
@@ -492,6 +497,29 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/cooperrc/advanced-dynamics/main?urlpath=tree/module_04/04_symbolic.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        <a class="jupyterhub-button" href="https://compmech.uconn.edu/hub/user-redirect/git-pull?repo=https://github.com/cooperrc/advanced-dynamics&urlpath=tree/advanced-dynamics/module_04/04_symbolic.md&branch=main"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
@@ -503,8 +531,30 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creating-constraints-with-sympy-notebook">
-   Creating constraints with SymPy notebook
+  <a class="reference internal nav-link" href="#define-mathbf-q-and-dot-mathbf-q">
+   1. define
+   <span class="math notranslate nohighlight">
+    \(\mathbf{q}~and~\dot{\mathbf{q}}\)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#take-a-jacobian-and-find-the-constraints-on-acceleration">
+   2. take a Jacobian and find the constraints on acceleration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lambdify-the-constraints-jacobian-and-mathbf-q-d">
+   3.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     lambdify
+    </span>
+   </code>
+   the constraints, Jacobian, and
+   <span class="math notranslate nohighlight">
+    \(\mathbf{Q}_d\)
+   </span>
   </a>
  </li>
 </ul>
@@ -518,10 +568,134 @@
         
               <div>
                 
-  <div class="section" id="creating-constraints-with-sympy">
-<h1><a class="reference external" href="https://www.loom.com/share/2cbf1f43f62f4d23883f7fbc9f19c709">Creating constraints with SymPy</a><a class="headerlink" href="#creating-constraints-with-sympy" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="creating-constraints-with-sympy-notebook">
-<h2><a class="reference external" href="https://cooperrc.github.io/advanced-dynamics/model_results/symbolic_constraints.html">Creating constraints with SymPy notebook</a><a class="headerlink" href="#creating-constraints-with-sympy-notebook" title="Permalink to this headline">¶</a></h2>
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="building-constraints-in-sympy">
+<h1>Building Constraints in <a class="reference external" href="https://www.sympy.org">SymPy</a><a class="headerlink" href="#building-constraints-in-sympy" title="Permalink to this headline">¶</a></h1>
+<p>It can be difficult to build constraints for general dynamic solutions. Each constraint is realtively straight forward, but keeping track of Jacobian terms or acceleration constraints</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathbf{C_q}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{Q_d} = -(\mathbf{C_q \dot{q}})_\mathbf{q}\mathbf{\dot{q}} - 2\mathbf{C}_{\mathbf{q}t}\dot{\mathbf{q}}- \mathbf{C}_{tt}\)</span></p></li>
+</ul>
+<p>can be cumbersome and confusing. In this notebook, you will use <a class="reference external" href="https://www.sympy.org">SymPy</a> to</p>
+<ol class="simple">
+<li><p>define <span class="math notranslate nohighlight">\(\mathbf{q}~and~\dot{\mathbf{q}}\)</span></p></li>
+<li><p>take a Jacobian and find the constraints on acceleration</p></li>
+<li><p><a class="reference external" href="https://docs.sympy.org/latest/tutorial/basic_operations.html#lambdify"><code class="docutils literal notranslate"><span class="pre">lambdify</span></code></a> the constraints, Jacobian, and <span class="math notranslate nohighlight">\(\mathbf{Q}_d\)</span></p></li>
+</ol>
+<div class="section" id="define-mathbf-q-and-dot-mathbf-q">
+<h2>1. define <span class="math notranslate nohighlight">\(\mathbf{q}~and~\dot{\mathbf{q}}\)</span><a class="headerlink" href="#define-mathbf-q-and-dot-mathbf-q" title="Permalink to this headline">¶</a></h2>
+<p>First, define the variables using <code class="docutils literal notranslate"><span class="pre">sympy.Matrix</span></code>. SymPy uses <code class="docutils literal notranslate"><span class="pre">var</span></code> to define variables, here you create</p>
+<p><span class="math notranslate nohighlight">\(q = \left[\begin{matrix}q_{1}\\q_{2}\\q_{3}\\q_{4}\\q_{5}\\q_{6}\end{matrix}\right],~
+\dot{q} = \left[\begin{matrix}dq_{1}\\dq_{2}\\dq_{3}\\dq_{4}\\dq_{5}\\dq_{6}\end{matrix}\right],~t,~and~L\)</span></p>
+<p>as SymPy variables.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sympy</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;q1, q2, q3, q4, q5, q6&#39;</span><span class="p">)</span>
+<span class="n">sympy</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;dq1, dq2, dq3, dq4, dq5, dq6&#39;</span><span class="p">)</span>
+<span class="n">sympy</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;t, L2&#39;</span><span class="p">)</span>
+<span class="n">q</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="n">q1</span><span class="p">,</span> <span class="n">q2</span><span class="p">,</span> <span class="n">q3</span><span class="p">,</span> <span class="n">q4</span><span class="p">,</span> <span class="n">q5</span><span class="p">,</span> <span class="n">q6</span><span class="p">])</span>
+<span class="n">dq</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="n">dq1</span><span class="p">,</span> <span class="n">dq2</span><span class="p">,</span> <span class="n">dq3</span><span class="p">,</span> <span class="n">dq4</span><span class="p">,</span> <span class="n">dq5</span><span class="p">,</span> <span class="n">dq6</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">q</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><span class="math notranslate nohighlight">\(\mathbf{q} = \left[\begin{matrix}q_{1}\\q_{2}\\q_{3}\\q_{4}\\q_{5}\\q_{6}\end{matrix}\right]\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dq</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="take-a-jacobian-and-find-the-constraints-on-acceleration">
+<h2>2. take a Jacobian and find the constraints on acceleration<a class="headerlink" href="#take-a-jacobian-and-find-the-constraints-on-acceleration" title="Permalink to this headline">¶</a></h2>
+<p><img alt="two bodies: sliding block and compound pendulum" src="../_images/spring_compound-2_bodies.svg" /></p>
+<p>In this example, you have two rigid bodies. Body one <span class="math notranslate nohighlight">\([q_1,~q_2,~q_3]\)</span> slides on the x-axis. Body 1 and body 2, <span class="math notranslate nohighlight">\([q_4,~q_5,~q_6]\)</span> are connected by a pin in the center of body 1, <span class="math notranslate nohighlight">\(\mathbf{R}_{pin} = q_1\hat{i}+q_2\hat{j}\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="n">q1</span>  <span class="o">-</span> <span class="n">q4</span> <span class="o">+</span> <span class="n">L2</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">sympy</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">q6</span><span class="p">),</span>
+                 <span class="n">q2</span> <span class="o">-</span> <span class="n">q5</span> <span class="o">+</span> <span class="n">L2</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">sympy</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">q6</span><span class="p">),</span>
+                 <span class="n">q2</span><span class="p">,</span>
+                 <span class="n">q3</span><span class="p">])</span>
+<span class="n">C</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, take the Jacobian, <span class="math notranslate nohighlight">\(\mathbf{C_q}\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Cq</span> <span class="o">=</span> <span class="n">C</span><span class="o">.</span><span class="n">jacobian</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Cq dimensions:&#39;</span><span class="p">,</span> <span class="n">Cq</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">Cq</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, you can calculate</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{Q_d} = -(\mathbf{C_q \dot{q}})_\mathbf{q}\mathbf{\dot{q}} - 2\mathbf{C}_{\mathbf{q}t}\dot{\mathbf{q}}- \mathbf{C}_{tt}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Qd</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">C</span><span class="o">.</span><span class="n">jacobian</span><span class="p">(</span><span class="n">q</span><span class="p">)</span><span class="nd">@dq</span><span class="p">)</span><span class="o">.</span><span class="n">jacobian</span><span class="p">(</span><span class="n">q</span><span class="p">)</span><span class="nd">@dq</span>\
+    <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">sympy</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">Cq</span><span class="p">,</span><span class="n">t</span><span class="p">)</span><span class="nd">@dq</span>\
+    <span class="o">-</span> <span class="n">sympy</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="n">Qd</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="lambdify-the-constraints-jacobian-and-mathbf-q-d">
+<h2>3. <a class="reference external" href="https://docs.sympy.org/latest/tutorial/basic_operations.html#lambdify"><code class="docutils literal notranslate"><span class="pre">lambdify</span></code></a> the constraints, Jacobian, and <span class="math notranslate nohighlight">\(\mathbf{Q}_d\)</span><a class="headerlink" href="#lambdify-the-constraints-jacobian-and-mathbf-q-d" title="Permalink to this headline">¶</a></h2>
+<p>Finally, you can create functions that return NumPy arrays with <code class="docutils literal notranslate"><span class="pre">sympy.lambdify</span></code>. The inputs are</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sympy</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span> <span class="n">inputs</span><span class="p">,</span> <span class="n">function</span><span class="p">,</span> <span class="s2">&quot;numpy&quot;</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>where the <code class="docutils literal notranslate"><span class="pre">inputs</span></code> are <span class="math notranslate nohighlight">\(\mathbf{q}\)</span>, <span class="math notranslate nohighlight">\(\dot{\mathbf{q}}\)</span>, and other parameters like time or dimensions, <span class="math notranslate nohighlight">\(L^2\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Cq_sys</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">lambdify</span><span class="p">((</span><span class="n">q</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">L2</span><span class="p">),</span> <span class="n">Cq</span><span class="p">,</span> <span class="s1">&#39;numpy&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Cq_sys</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">6</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">L2</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Q</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">lambdify</span><span class="p">((</span><span class="n">q</span><span class="p">,</span> <span class="n">dq</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">L2</span><span class="p">),</span> <span class="n">Qd</span><span class="p">,</span> <span class="s2">&quot;numpy&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Q</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">6</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">6</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">L2</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
@@ -559,7 +733,7 @@
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Lecture 25 - Embedding technique for computational methods</p>
+                <p class="prevnext-title">Lecture 03 - Embedding technique for computational methods</p>
             </div>
         </a>
     </div>
@@ -567,7 +741,7 @@
         <a class="right-next" href="05_lagrange.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Lecture 27 - Lagrange Multipliers</p>
+                <p class="prevnext-title">Lecture 05 - Lagrange Multipliers</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

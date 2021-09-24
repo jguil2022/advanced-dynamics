@@ -24,7 +24,7 @@ anim = animation.FuncAnimation(fig, animate, init_func=init,
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mAttributeError[0m                            Traceback (most recent call last)
-[0;32m/tmp/ipykernel_1809/270068347.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/tmp/ipykernel_1762/270068347.py[0m in [0;36m<module>[0;34m[0m
 [0;32m----> 1[0;31m anim = animation.FuncAnimation(fig, animate, init_func=init,
 [0m[1;32m      2[0m                                [0mframes[0m[0;34m=[0m[0mrange[0m[0;34m([0m[0;36m0[0m[0;34m,[0m[0mlen[0m[0;34m([0m[0mt[0m[0;34m)[0m[0;34m)[0m[0;34m,[0m [0minterval[0m[0;34m=[0m[0;36m10[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
 [1;32m      3[0m                                blit=True)
@@ -141,7 +141,7 @@ anim = animation.FuncAnimation(fig, animate, init_func=init,
 [0m[1;32m   1757[0m             [0;32mif[0m [0mself[0m[0;34m.[0m[0m_blit[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
 [1;32m   1758[0m                 [0;32mif[0m [0mself[0m[0;34m.[0m[0m_drawn_artists[0m [0;32mis[0m [0;32mNone[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
 
-[0;32m/tmp/ipykernel_1809/3425324479.py[0m in [0;36minit[0;34m()[0m
+[0;32m/tmp/ipykernel_1762/3425324479.py[0m in [0;36minit[0;34m()[0m
 [1;32m     15[0m [0;32mdef[0m [0minit[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
 [1;32m     16[0m     [0mline1[0m[0;34m.[0m[0mset_data[0m[0;34m([0m[0;34m[[0m[0;34m][0m[0;34m,[0m [0;34m[[0m[0;34m][0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0;32m---> 17[0;31m     [0mline1[0m[0;34m.[0m[0mset_3d_properties[0m[0;34m([0m[0;34m[[0m[0;34m][0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
