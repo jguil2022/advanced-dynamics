@@ -54,7 +54,7 @@ anim = animation.FuncAnimation(fig, animate, init_func=init,
 The above exception was the direct cause of the following exception:
 
 [0;31mRuntimeError[0m                              Traceback (most recent call last)
-[0;32m/tmp/ipykernel_2071/2168572440.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/tmp/ipykernel_2051/2168572440.py[0m in [0;36m<module>[0;34m[0m
 [0;32m----> 1[0;31m anim = animation.FuncAnimation(fig, animate, init_func=init,
 [0m[1;32m      2[0m                                [0mframes[0m[0;34m=[0m[0mrange[0m[0;34m([0m[0;36m0[0m[0;34m,[0m[0mlen[0m[0;34m([0m[0mt[0m[0;34m)[0m[0;34m)[0m[0;34m,[0m [0minterval[0m[0;34m=[0m[0;36m100[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
 [1;32m      3[0m                                blit=True)
