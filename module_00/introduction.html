@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -41,7 +41,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -67,7 +67,12 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
     
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
@@ -408,22 +413,22 @@
 
 
           
+<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
+<div class="sbt-scroll-pixel-helper"></div>
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
     <div class="topbar container-xl fixed-top">
     <div class="topbar-contents row">
         <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
         <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
+            <div class="topbar-left">
+                
+                <label class="nav-toggle-button" for="__navigation">
+                    <div class="visually-hidden">Toggle navigation</div>
+                    <i class="fas fa-bars"></i>
+                </label>
+                
+            </div>
             
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
@@ -567,11 +572,10 @@ software, and materials</p></li>
 <li><p>View video content and submit answers in a Google Form</p></li>
 <li><p>Use the discussion board on Piazza</p></li>
 <li><p>Locate course areas and features, and recognize their general purposes</p></li>
-<li><p>Download and install Respondus Lockdown Browser with Monitor to ensure you
-can successfully take the graded quizzes.</p></li>
-<li><p>Scan and upload a hand-written assignment</p></li>
 <li><p>Open an Adams file and save a figure</p></li>
-<li><p>Submit a Google Document in HuskyCT</p></li>
+<li><p>Submit a jupyter notebook on HuskyCT</p></li>
+<li></li>
+<li><p>Scan and upload a hand-written quiz</p></li>
 </ol>
 </div>
 <div class="section" id="activities">
@@ -583,18 +587,10 @@ can successfully take the graded quizzes.</p></li>
 <li><p>Read about the course’s organization and tools.</p></li>
 <li><p>Take a 5-minute practice quiz</p></li>
 <li><p>Submit a practice quiz.</p></li>
-<li><p>Download Respondus Lockdown Browser on the computer you plan to use in this
-course.</p></li>
 <li><p>Review the University of Connecticut’s academic policies.</p></li>
 <li><p>Watch the Introduction videos and answer the questions</p></li>
 <li><p>Finish a tutorial on Adams and complete the Google form</p></li>
-<li><p>Turn in a 1-page report that has a figure from the Adams tutorial</p></li>
 </ul>
-<p><strong>Note:</strong> See the course schedule for specific due dates</p> 
-<iframe
-width="600" height="400" style="border-width: 0;"
-src="https://calendar.google.com/calendar/embed?height=400&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FNew_York&amp;src=dWNvbm4uZWR1X3ZlaHJhNTdiZW5yNmhydTdoczc5OTdxcDUwQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&amp;color=%23616161&amp;showTitle=1&amp;mode=AGENDA&amp;showTabs=1&amp;showCalendars=0"
-frameborder="0" scrolling="no"></iframe>
 </div>
 
     <script type="text/x-thebe-config">
